@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Exquisite Rugs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="explore-label">Explore our collection</span>
+        <span class="explore-rule">——</span>
+        <button class="search-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="7.5" cy="7.5" r="5.5"/>
+            <path d="m13 13 3 3" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <a class="topbar-wordmark" href="#">EXQUISITE&nbsp;&nbsp;RUGS<span class="wordmark-dot">.</span></a>
+
+      <div class="topbar-right">
+        <!-- Wishlist -->
+        <button class="icon-btn" aria-label="Saved items">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M10 17s-7-4.5-7-9a4 4 0 0 1 7-2.65A4 4 0 0 1 17 8c0 4.5-7 9-7 9z"/>
+          </svg>
+        </button>
+
+        <!-- Cart -->
+        <button class="icon-btn" aria-label="Cart" id="cart-icon-btn">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2 3 6v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6l-3-4z"/>
+            <line x1="3" y1="6" x2="17" y2="6"/>
+            <path d="M13 10a3 3 0 0 1-6 0"/>
+          </svg>
+          <span class="badge" id="header-cart-count">4</span>
+        </button>
+
+        <div class="vert-rule" aria-hidden="true"></div>
+
+        <!-- User -->
+        <div class="user-pill">
+          <div class="avatar" aria-hidden="true">JD</div>
+          <div class="name-block">
+            <span class="name">John Doe</span>
+            <span class="role">Trade</span>
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <button class="hamburger-btn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Primary nav -->
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#">New Arrivals</a>
+      <a href="#">Rugs</a>
+      <a href="#">Collections</a>
+      <a href="#">Custom Rugs</a>
+      <a href="#">For Professionals</a>
+    </nav>
+
+    <!-- Announcement -->
+    <div class="announcement-bar" id="announcement-bar">
+      Visit our newly expanded showroom to explore our newest collections and current promotions.
+      <a href="#">Learn More</a>
+      <button class="announcement-close" id="announcement-close" aria-label="Dismiss">×</button>
+    </div>
+
+  </header>
+
+  <!-- Checkout progress -->
+  <div class="checkout-progress-bar">
+    <nav class="checkout-progress" aria-label="Checkout progress">
+      <div class="progress-step active" aria-current="step">
+        <div class="progress-step-num">1</div>
+        <span class="progress-step-label">Cart</span>
+      </div>
+      <div class="progress-divider" aria-hidden="true"></div>
+      <div class="progress-step" aria-label="Checkout pending">
+        <div class="progress-step-num">2</div>
+        <span class="progress-step-label">Checkout</span>
+      </div>
+      <div class="progress-divider" aria-hidden="true"></div>
+      <div class="progress-step" aria-label="Confirmation pending">
+        <div class="progress-step-num">3</div>
+        <span class="progress-step-label">Confirmation</span>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ── Page ── -->
+  <div class="page-wrap">
+    <div class="page-heading">
+      <p class="eyebrow">Trade Account</p>
+      <h1>Your <em>Cart</em></h1>
+      <p class="subhead" id="cart-subhead">3 items · Login required · All prices in USD</p>
+    </div>
+
+    <div class="cart-layout" id="cart-layout">
+
+      <!-- ═══════════════════════════════════
+           LEFT — Items
+           ═══════════════════════════════════ -->
+      <section class="cart-items-section" aria-label="Cart items">
+
+        <!-- Shipment Preference -->
+        <div class="shipment-pref">
+          <p class="shipment-pref-title">Shipment Preference</p>
+          <div class="shipment-options" role="radiogroup" aria-label="Shipment preference">
+
+            <label class="ship-option selected" id="opt-partial" tabindex="0">
+              <input type="radio" name="shipment" value="partial" checked class="ship-radio-input" aria-hidden="true">
+              <div class="ship-radio-custom" aria-hidden="true"><div class="ship-radio-dot"></div></div>
+              <div>
+                <span class="ship-option-name">Ship as available</span>
+                <span class="ship-option-desc">Items ship as they become ready — partial shipments may occur</span>
+              </div>
+            </label>
+
+            <label class="ship-option" id="opt-hold" tabindex="0">
+              <input type="radio" name="shipment" value="hold" class="ship-radio-input" aria-hidden="true">
+              <div class="ship-radio-custom" aria-hidden="true"><div class="ship-radio-dot"></div></div>
+              <div>
+                <span class="ship-option-name">Hold for complete shipment</span>
+                <span class="ship-option-desc">Hold all items until your full order is ready to ship together</span>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Cart items rendered by JS -->
+        <div id="cart-items-list"></div>
+
+        <!-- Workroom -->
+        <div class="workroom-block">
+          <div class="workroom-text">
+            <h3>Need a custom modification?</h3>
+            <p>Our local workrooms can cut, notch, or finish eligible in-stock rugs — often a faster alternative to a full custom order. Eligibility varies by construction and design.</p>
+          </div>
+          <a href="mailto:workroom@exquisiterugs.com" class="workroom-cta">Inquire</a>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════
+           RIGHT — Order Summary
+           ═══════════════════════════════════ -->
+      <aside class="order-summary-panel" aria-label="Order summary">
+
+        <div class="summary-head">
+          <h2>Order Summary</h2>
+          <span class="item-count" id="summary-item-count">3 items</span>
+        </div>
+
+        <div class="summary-body">
+          <!-- Mini item list -->
+          <div class="summary-items" id="summary-items-list"></div>
+
+          <!-- Totals -->
+          <div class="summary-totals">
+            <div class="summary-row" id="summary-subtotal-row">
+              <span class="summary-row-label">Subtotal</span>
+              <span class="summary-row-value" id="summary-subtotal">—</span>
+            </div>
+            <div class="summary-row discount hidden" id="summary-discount-row">
+              <span class="summary-row-label" id="summary-discount-label">Promo discount</span>
+              <span class="summary-row-value" id="summary-discount-value">—</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row">
+              <span class="summary-row-label">Tax</span>
+              <span class="summary-row-value exempt">Exempt</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-row-label">Shipping</span>
+              <span class="summary-row-value offline">Calculated offline</span>
+            </div>
+          </div>
+
+          <!-- Promo code -->
+          <div class="promo-section">
+            <span class="promo-label">Promotional Code</span>
+            <div class="promo-form">
+              <input
+                class="promo-input"
+                id="promo-input"
+                type="text"
+                placeholder="Enter code"
+                autocomplete="off"
+                aria-label="Promotional code"
+              >
+              <button class="promo-apply-btn" id="promo-apply-btn">Apply</button>
+            </div>
+            <p class="promo-feedback" id="promo-feedback" role="alert" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- Net 30 indicator -->
+        <div class="terms-badge">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="8" cy="8" r="6.5"/>
+            <path d="M8 5v3.5l2 1.5"/>
+          </svg>
+          <span>Payment terms: <strong>Net 30</strong> · Invoice on shipment</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="summary-cta">
+          <a class="btn-primary-full" href="checkout.html" id="checkout-btn">
+            Proceed to Checkout
+          </a>
+          <div class="summary-cta-meta">
+            <a href="#">Terms &amp; Conditions</a>
+            <span class="dot">·</span>
+            <a href="#">Returns &amp; Claims</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- /cart-layout -->
+  </div><!-- /page-wrap -->
+
+  <script src="js/cart-store.js"></script>
+  <script src="js/mini-cart.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

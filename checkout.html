@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Exquisite Rugs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="explore-label">Explore our collection</span>
+        <span class="explore-rule">——</span>
+        <button class="search-btn" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="7.5" cy="7.5" r="5.5"/>
+            <path d="m13 13 3 3" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <a class="topbar-wordmark" href="#">EXQUISITE&nbsp;&nbsp;RUGS<span class="wordmark-dot">.</span></a>
+
+      <div class="topbar-right">
+        <button class="icon-btn" aria-label="Saved items">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M10 17s-7-4.5-7-9a4 4 0 0 1 7-2.65A4 4 0 0 1 17 8c0 4.5-7 9-7 9z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Cart" id="cart-icon-btn">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2 3 6v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6l-3-4z"/>
+            <line x1="3" y1="6" x2="17" y2="6"/>
+            <path d="M13 10a3 3 0 0 1-6 0"/>
+          </svg>
+          <span class="badge" id="header-cart-count">4</span>
+        </button>
+        <div class="vert-rule" aria-hidden="true"></div>
+        <div class="user-pill">
+          <div class="avatar" aria-hidden="true">JD</div>
+          <div class="name-block">
+            <span class="name">John Doe</span>
+            <span class="role">Trade</span>
+          </div>
+        </div>
+        <button class="hamburger-btn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Primary nav -->
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#">New Arrivals</a>
+      <a href="#">Rugs</a>
+      <a href="#">Collections</a>
+      <a href="#">Custom Rugs</a>
+      <a href="#">For Professionals</a>
+    </nav>
+
+    <!-- Announcement -->
+    <div class="announcement-bar" id="announcement-bar">
+      Visit our newly expanded showroom to explore our newest collections and current promotions.
+      <a href="#">Learn More</a>
+      <button class="announcement-close" id="announcement-close" aria-label="Dismiss">×</button>
+    </div>
+
+  </header>
+
+  <!-- Checkout progress (separate from main header) -->
+  <div class="checkout-progress-bar">
+    <nav class="checkout-progress" aria-label="Checkout progress">
+      <a class="progress-step progress-step-link done" href="cart.html" aria-label="Return to cart">
+        <div class="progress-step-num">✓</div>
+        <span class="progress-step-label">Cart</span>
+      </a>
+      <div class="progress-divider" aria-hidden="true"></div>
+      <div class="progress-step active" aria-current="step">
+        <div class="progress-step-num">2</div>
+        <span class="progress-step-label">Checkout</span>
+      </div>
+      <div class="progress-divider" aria-hidden="true"></div>
+      <div class="progress-step" aria-label="Confirmation pending">
+        <div class="progress-step-num">3</div>
+        <span class="progress-step-label">Confirmation</span>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ── Page ── -->
+  <div class="page-wrap">
+    <div class="page-heading">
+      <p class="eyebrow">Secure Checkout</p>
+      <h1>Place Your <em>Order</em></h1>
+      <p class="subhead">Trade account · All prices in USD · Tax exempt</p>
+    </div>
+
+    <div class="checkout-layout">
+
+      <!-- ═══════════════════════════════════
+           LEFT — Form Sections
+           ═══════════════════════════════════ -->
+      <div class="checkout-sections">
+
+        <!-- ── 1. Account & Billing ── -->
+        <div class="checkout-section">
+          <div class="section-head">
+            <h2>
+              <span class="section-num">01</span>
+              Account &amp; Billing
+            </h2>
+          </div>
+          <div class="section-body">
+            <div class="info-block">
+              <div class="info-field">
+                <span class="info-label">Account Name</span>
+                <span class="info-value">Studio Meridian Interiors</span>
+              </div>
+              <div class="info-field">
+                <span class="info-label">Account Number</span>
+                <span class="info-value mono">ER-004821</span>
+              </div>
+              <div class="info-field">
+                <span class="info-label">Payment Terms</span>
+                <span class="info-value">Net 30</span>
+              </div>
+              <div class="info-field">
+                <span class="info-label">Account Status</span>
+                <span class="info-value" style="color:var(--success)">Active — Credit Approved</span>
+              </div>
+            </div>
+
+            <div class="billing-address-block">
+              <span class="info-label">Billing Address</span>
+              <div class="info-value" style="margin-top:4px">
+                Studio Meridian Interiors<br>
+                840 Merchandise Mart Plaza, Suite 1204<br>
+                Chicago, IL 60654
+              </div>
+            </div>
+
+            <p class="readonly-note">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+                <rect x="2" y="5" width="10" height="7" rx="1.5"/>
+                <path d="M5 5V3.5a2 2 0 0 1 4 0V5"/>
+              </svg>
+              Billing information is pulled from your account record.
+              <a href="#">Update in account settings</a>
+            </p>
+
+            <!-- Tax / resale notice -->
+            <div class="tax-notice">
+              <strong>Tax Exempt Account.</strong> All orders placed under this account are submitted
+              tax exempt. If your resale certificate is missing or expired, your order will be
+              passed to our team for internal review — you will not be blocked from completing checkout.
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 2. Shipping Address ── -->
+        <div class="checkout-section">
+          <div class="section-head">
+            <h2>
+              <span class="section-num">02</span>
+              Shipping Address
+            </h2>
+          </div>
+          <div class="section-body">
+            <p style="font-size:12.5px;color:var(--muted);margin-bottom:18px;line-height:1.5;">
+              Enter the delivery address for this order. Carrier and shipping method are
+              selected by our team post-order based on item size and weight — no shipping
+              cost is collected at checkout.
+            </p>
+
+            <form id="shipping-form" novalidate>
+              <div class="form-grid">
+
+                <div class="form-group full">
+                  <label class="form-label" for="ship-company">
+                    Company / Attention Name <span class="optional">(required)</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    id="ship-company"
+                    type="text"
+                    placeholder="e.g. Studio Meridian Interiors / Attn: Jane Smith"
+                    autocomplete="organization"
+                    required
+                  >
+                  <span class="field-error" id="err-company">Please enter a company or attention name.</span>
+                </div>
+
+                <div class="form-group full">
+                  <label class="form-label" for="ship-phone">
+                    Phone Number <span class="optional">(required)</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    id="ship-phone"
+                    type="tel"
+                    placeholder="(312) 555-0100"
+                    autocomplete="tel"
+                    required
+                  >
+                  <span class="field-error" id="err-phone">Please enter a phone number.</span>
+                </div>
+
+                <div class="form-group full">
+                  <label class="form-label" for="ship-address1">
+                    Street Address <span class="optional">(required)</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    id="ship-address1"
+                    type="text"
+                    placeholder="Street address"
+                    autocomplete="address-line1"
+                    required
+                  >
+                  <span class="field-error" id="err-address1">Please enter a street address.</span>
+                </div>
+
+                <div class="form-group full">
+                  <label class="form-label" for="ship-address2">
+                    Suite / Floor <span class="optional">(optional)</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    id="ship-address2"
+                    type="text"
+                    placeholder="Suite, floor, c/o…"
+                    autocomplete="address-line2"
+                  >
+                </div>
+
+                <div class="form-grid addr-three full" style="padding:0;border:none;gap:14px 20px;display:grid;">
+                  <div class="form-group">
+                    <label class="form-label" for="ship-city">City</label>
+                    <input
+                      class="form-input"
+                      id="ship-city"
+                      type="text"
+                      placeholder="City"
+                      autocomplete="address-level2"
+                      required
+                    >
+                    <span class="field-error" id="err-city">Required.</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ship-state">State</label>
+                    <select class="form-select" id="ship-state" required>
+                      <option value="">—</option>
+                      <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                      <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                      <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+                      <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+                      <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                      <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+                      <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+                      <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+                      <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+                      <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                      <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+                      <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+                      <option>WI</option><option>WY</option><option>DC</option>
+                    </select>
+                    <span class="field-error" id="err-state">Required.</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ship-zip">ZIP Code</label>
+                    <input
+                      class="form-input"
+                      id="ship-zip"
+                      type="text"
+                      placeholder="60601"
+                      autocomplete="postal-code"
+                      maxlength="10"
+                      required
+                    >
+                    <span class="field-error" id="err-zip">Required.</span>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- ── 3. Payment ── -->
+        <div class="checkout-section">
+          <div class="section-head">
+            <h2>
+              <span class="section-num">03</span>
+              Payment
+            </h2>
+          </div>
+          <div class="section-body">
+
+            <div class="payment-methods" role="radiogroup" aria-label="Payment method">
+
+              <!-- Net 30 -->
+              <div class="payment-method selected" id="pm-net30" role="radio" aria-checked="true" tabindex="0" data-method="net30">
+                <div class="payment-method-inner">
+                  <div class="payment-radio" aria-hidden="true">
+                    <div class="payment-radio-dot"></div>
+                  </div>
+                  <div class="payment-info">
+                    <div class="payment-method-name">Net 30</div>
+                    <div class="payment-method-desc">Invoice issued at shipment · Payment due 30 days from ship date</div>
+                  </div>
+                  <span class="payment-method-tag">Default</span>
+                </div>
+              </div>
+              <div class="net30-detail visible" id="net30-detail">
+                Your account is approved for <strong>Net 30</strong> terms. An invoice will be emailed
+                at the time of shipment. Payment is due within 30 days of the ship date.
+                Contact <a href="mailto:ar@exquisiterugs.com" style="color:var(--bronze)">ar@exquisiterugs.com</a> for billing questions.
+              </div>
+
+              <!-- Credit Card -->
+              <div class="payment-method" id="pm-cc" role="radio" aria-checked="false" tabindex="0" data-method="cc">
+                <div class="payment-method-inner">
+                  <div class="payment-radio" aria-hidden="true">
+                    <div class="payment-radio-dot"></div>
+                  </div>
+                  <div class="payment-info">
+                    <div class="payment-method-name">Credit Card</div>
+                    <div class="payment-method-desc">Charged immediately at order submission · Processed via Stripe</div>
+                  </div>
+                  <span class="payment-method-tag">Stripe</span>
+                </div>
+              </div>
+              <div class="cc-form" id="cc-form">
+                <div class="form-grid" style="gap:12px 16px">
+                  <div class="form-group full">
+                    <label class="form-label" for="cc-name">Name on Card</label>
+                    <input class="form-input" id="cc-name" type="text" placeholder="Jane Smith" autocomplete="cc-name">
+                  </div>
+                  <div class="form-group full">
+                    <label class="form-label" for="cc-number">Card Number</label>
+                    <input class="form-input" id="cc-number" type="text" placeholder="•••• •••• •••• ••••" autocomplete="cc-number" maxlength="19" inputmode="numeric">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cc-expiry">Expiry</label>
+                    <input class="form-input" id="cc-expiry" type="text" placeholder="MM / YY" autocomplete="cc-exp" maxlength="7" inputmode="numeric">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cc-cvc">CVC</label>
+                    <input class="form-input" id="cc-cvc" type="text" placeholder="•••" autocomplete="cc-csc" maxlength="4" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="stripe-notice">
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.25">
+                    <rect x="1.5" y="4" width="11" height="8" rx="1.5"/>
+                    <path d="M1.5 7h11"/>
+                    <path d="M5 4V2.5a2 2 0 0 1 4 0V4"/>
+                  </svg>
+                  Secured by Stripe · Card details are not stored
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ── 4. PO / Notes / Promo ── -->
+        <div class="checkout-section">
+          <div class="section-head">
+            <h2>
+              <span class="section-num">04</span>
+              Reference &amp; Notes
+            </h2>
+          </div>
+          <div class="section-body">
+            <div class="form-grid">
+
+              <div class="form-group full">
+                <label class="form-label" for="po-number">
+                  PO / Reference Number <span class="optional">(optional)</span>
+                </label>
+                <input
+                  class="form-input"
+                  id="po-number"
+                  type="text"
+                  placeholder="Your internal PO or project reference"
+                  autocomplete="off"
+                >
+                <span class="form-hint">One reference per order · Not validated against any external system</span>
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label" for="order-notes">
+                  Order Notes <span class="optional">(optional)</span>
+                </label>
+                <textarea
+                  class="form-textarea"
+                  id="order-notes"
+                  placeholder="Delivery instructions, project context, or any notes for our team…"
+                  rows="3"
+                ></textarea>
+                <span class="form-hint">Order-level notes only · Item-level notes are not supported at this time</span>
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label" for="checkout-promo">
+                  Promotional Code <span class="optional">(optional)</span>
+                </label>
+                <div class="promo-form">
+                  <input
+                    class="promo-input"
+                    id="checkout-promo"
+                    type="text"
+                    placeholder="Enter code"
+                    autocomplete="off"
+                  >
+                  <button class="promo-apply-btn" id="checkout-promo-btn">Apply</button>
+                </div>
+                <p class="promo-feedback" id="checkout-promo-feedback" role="alert" aria-live="polite"></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Submit ── -->
+        <div class="checkout-submit">
+          <button class="btn-primary-full" id="place-order-btn" type="button">
+            Place Order
+          </button>
+          <div class="checkout-submit-meta">
+            By placing this order you agree to our
+            <a href="#">Terms &amp; Conditions</a> and
+            <a href="#">Returns &amp; Claims Policy</a>.<br>
+            Orders are submitted directly and routed for internal review.
+            A confirmation email will be sent to your account address.
+          </div>
+        </div>
+
+      </div><!-- /checkout-sections -->
+
+      <!-- ═══════════════════════════════════
+           RIGHT — Order Summary
+           ═══════════════════════════════════ -->
+      <aside class="checkout-summary" aria-label="Order summary">
+        <div class="order-summary-panel">
+          <div class="summary-head">
+            <h2>Order Summary</h2>
+            <span class="item-count" id="co-item-count">3 items</span>
+          </div>
+          <div class="summary-body">
+            <div class="summary-items" id="co-items-list">
+              <!-- Populated by JS -->
+            </div>
+            <div class="summary-totals">
+              <div class="summary-row summary-subtotal">
+                <span class="summary-row-label">Subtotal</span>
+                <span class="summary-row-value" id="co-subtotal">$7,135.00</span>
+              </div>
+              <div class="summary-row discount" id="co-discount-row" style="display:none">
+                <span class="summary-row-label" id="co-discount-label">Promo</span>
+                <span class="summary-row-value" id="co-discount-val">—</span>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-row">
+                <span class="summary-row-label">Tax</span>
+                <span class="summary-row-value exempt">Exempt</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-row-label">Shipping</span>
+                <span class="summary-row-value offline">Calculated offline</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div><!-- /checkout-layout -->
+  </div><!-- /page-wrap -->
+
+  <script src="js/cart-store.js"></script>
+  <script src="js/mini-cart.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
